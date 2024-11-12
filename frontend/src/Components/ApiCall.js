@@ -11,7 +11,7 @@ const useApiCall = () => {
   const [error, setError] = useState(null);
   const [events, setEvents] = useState([]);
   const [user, setUser] = useState(null);
-  const adminEmail = 'admin@example.com';
+  const adminEmail = '';
 
   useEffect(() => {
     const initClient = () => {
