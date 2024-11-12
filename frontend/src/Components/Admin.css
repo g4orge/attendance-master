@@ -1,0 +1,81 @@
+.admin-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2, h3 {
+    color: #333;
+  }
+  
+  h4 {
+    color: #555;
+    margin-top: 20px;
+  }
+  
+  .error {
+    color: red;
+  }
+  
+  .dropdown {
+    margin: 10px 0 20px;
+    padding: 8px;
+    font-size: 16px;
+  }
+  
+  .event-item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 5px 0;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .event-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .event-options, .delete-confirm, .edit-form {
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+  }
+  
+  .btn {
+    padding: 8px 12px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .signout-btn {
+    background-color: #ff6666;
+    color: white;
+  }
+  
+  .edit-btn {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .delete-btn {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .restore-btn {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .save-btn {
+    background-color: #4CAF50;
+    color: white;
+  }

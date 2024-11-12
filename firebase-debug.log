@@ -1,0 +1,21 @@
+[debug] [2024-09-30T15:06:26.634Z] ----------------------------------------------------------------------
+[debug] [2024-09-30T15:06:26.639Z] Command:       /Users/georgeomoregie/.nvm/versions/node/v22.6.0/bin/node /Users/georgeomoregie/.nvm/versions/node/v22.6.0/bin/firebase init
+[debug] [2024-09-30T15:06:26.639Z] CLI Version:   13.20.1
+[debug] [2024-09-30T15:06:26.640Z] Platform:      darwin
+[debug] [2024-09-30T15:06:26.640Z] Node Version:  v22.6.0
+[debug] [2024-09-30T15:06:26.640Z] Time:          Mon Sep 30 2024 11:06:26 GMT-0400 (Eastern Daylight Time)
+[debug] [2024-09-30T15:06:26.640Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-09-30T15:06:26.648Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-09-30T15:06:26.648Z] > authorizing via signed-in user (goomoregie@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/georgeomoregie/attendance
+
