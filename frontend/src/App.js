@@ -6,7 +6,7 @@ import HomePage from './Components/HomePage';
 import MainCalendar from './Components/MainCalendar';
 import Admin from './Components/Admin';
 import CreateEvent from './Components/CreateEvent';
-import Login from './Components/Login'; // Import the Login component
+
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -22,8 +22,6 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Public route for login */}
-        <Route path="/login" element={<Login onLogin={handleLogin} />} />
 
         {/* Protected routes with Layout (Navbar) */}
         <Route
