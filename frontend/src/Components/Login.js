@@ -1,7 +1,7 @@
 // src/Components/Login.js
 import React, { useState } from 'react';
 import './Login.css'; // Add styling for the login page
-import logo from '../logo.svg'; // Update path if your logo is in a different folder
+// import logo from 'Logo.png'; // Update path if your logo is in a different folder
 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState('');
@@ -19,7 +19,7 @@ const Login = ({ onLogin }) => {
 
   return (
     <div className="login-container">
-      <img src={logo} alt="App Logo" className="login-logo" />
+      <img src="Logo.png" alt="App Logo" className="login-logo" />
       <form onSubmit={handleSubmit} className="login-form">
         <h2>Login</h2>
         <input
