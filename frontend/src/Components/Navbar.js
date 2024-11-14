@@ -1,9 +1,9 @@
-// Navbar.js
+// src/Components/Navbar.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Navbar.css'; // Assuming you have a CSS file for styling
+import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ onLogout }) => {
   return (
     <div className="navbar">
       <div className="navbar-left">
@@ -13,9 +13,9 @@ const Navbar = () => {
       <div className="navbar-center">
         <Link to="/calendar" className="nav-link">Calendar</Link>
         <Link to="/admin" className="nav-link">Admin</Link>
-       {/* <Link to="/admin-dashboard" className="nav-link">Admin Dashboard</Link>   */}
       </div>
       <div className="navbar-right">
+        <button onClick={onLogout} className="logout-button">Logout</button>
       </div>
     </div>
   );
