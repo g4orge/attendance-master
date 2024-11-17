@@ -24,15 +24,11 @@ function App() {
       <Routes>
 
         {/* Protected routes with Layout (Navbar) */}
-        <Route
-          path="/"
-          element={isLoggedIn ? <Layout onLogout={handleLogout} /> : <Navigate to="/login" />}
-        >
+        
           <Route index element={<HomePage />} />
           <Route path="calendar" element={<MainCalendar />} />
           <Route path="create-event" element={<CreateEvent />} />
           <Route path="admin" element={<Admin />} />
-        </Route>
       </Routes>
     </Router>
   );
