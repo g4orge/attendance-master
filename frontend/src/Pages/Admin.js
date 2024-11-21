@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { deleteEvent, createEvent, listEvents, updateEvent } from './CalendarService';
-import useApiCall from './ApiCall';
+import { deleteEvent, createEvent, listEvents, updateEvent } from '../Components/CalendarService';
+import useApiCall from '../Components/ApiCall';
 import './Admin.css';
 
 const Admin = () => {
