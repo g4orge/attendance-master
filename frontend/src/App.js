@@ -24,7 +24,7 @@ function App() {
       <Routes>
 
         {/* Protected routes with Layout (Navbar) */}
-        
+        <Route path= "/" element={<Layout/>} />
           <Route index element={<HomePage />} />
           <Route path="calendar" element={<MainCalendar />} />
           <Route path="create-event" element={<CreateEvent />} />
