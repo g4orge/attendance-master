@@ -1,10 +1,10 @@
 // src/App.js
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Layout from './Components/Layout';
-import HomePage from './Components/HomePage';
-import MainCalendar from './Components/MainCalendar';
-import Admin from './Components/Admin';
+//import Layout from './Components/Layout';
+import HomePage from './Pages/HomePage';
+import MainCalendar from './Pages/MainCalendar';
+import Admin from './Pages/Admin';
 import CreateEvent from './Components/CreateEvent';
 
 

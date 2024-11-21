@@ -1,8 +1,8 @@
 // MainCalendar.js
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import useApiCall from './ApiCall';
-import { listEvents } from './CalendarService';
+import useApiCall from '../Components/ApiCall';
+import { listEvents } from '../Components/CalendarService';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import './MainCalendar.css';
