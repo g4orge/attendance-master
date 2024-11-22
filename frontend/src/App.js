@@ -1,23 +1,26 @@
 // src/App.js
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './Components/Layout';
 import HomePage from './Pages/HomePage';
 import MainCalendar from './Pages/MainCalendar';
 import Admin from './Pages/Admin';
 import CreateEvent from './Components/CreateEvent';
 import Attendance from './Pages/Attendance';
+import useApiCall from './Components/ApiCall';
 
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { isSignedIn, handleSignOutClick, handleAuthClick } = useApiCall();
+
+  useEffect(() => { console.log(isSignedIn)}, [isSignedIn]);
 
   const handleLogin = () => {
-    setIsLoggedIn(true);
+    handleAuthClick();
   };
 
   const handleLogout = () => {
-    setIsLoggedIn(false);
+    handleSignOutClick();
   };
 
   return (
@@ -25,7 +28,7 @@ function App() {
       <Routes>
 
         {/* Protected routes with Layout (Navbar) */}
-        <Route path= "/" element={<Layout/>} />
+        <Route path= "/" element={isSignedIn ? <Layout onLogout={handleLogout} /> : <Navigate to="/login" />} />
           <Route index element={<HomePage />} />
           <Route path="calendar" element={<MainCalendar />} />
           <Route path="create-event" element={<CreateEvent />} />
