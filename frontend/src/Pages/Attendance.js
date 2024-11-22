@@ -15,9 +15,9 @@ const Student = {
   ville: '',
   province: '',
   codePostal: '',
-  nombreEnfants: 0,
+  nombreEnfants: 1,
   nomPremierEnfant: '',
-  age: 0,
+  age: null,
   besoinsSpec: '',
 }
 
@@ -34,7 +34,13 @@ const Attendance = () => {
       const data = response.data.map(item => ({
         ...Student,
         ...item,
-      }));
+      })).sort((a, b) => {
+        const nameA = a.nom.toLowerCase();
+        const nameB = b.nom.toLowerCase();
+        if (nameA < nameB) return -1;
+        if (nameA > nameB) return 1;
+        return 0;
+      });
       setAttendanceData(data);
       console.log(`my name os helga : ${JSON.stringify(data)}`);
     } catch (err) {
