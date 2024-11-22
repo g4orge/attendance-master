@@ -1447,7 +1447,7 @@ router.get('/users', (req,res) => {
         }
        ]
 
-    response.send (userData)
+    res.json(userData)
 })
 
 module.exports = router 

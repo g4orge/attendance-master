@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.7.7",
     "gapi-script": "^1.2.0",
     "react": "^18.3.1",
     "react-calendar": "^5.0.0",
@@ -14,9 +15,6 @@
     "react-script": "^2.0.5",
     "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
-  },
-  "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "<latest_version>"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -44,6 +42,6 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "<latest_version>"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }

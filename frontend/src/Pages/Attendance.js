@@ -1,12 +1,27 @@
 // src/Components/Attendance.js
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 //import { attendanceData } from './Router';
 
 const Attendance = () => {
-  const [data, setData] = useState();
+  const [attendanceData, setAttendanceData] = useState();
+
+  useEffect(() => {
+    fetchAttendanceData();
+  }, []);
+
+  const fetchAttendanceData = async () => {
+    try {
+      const response = await axios.get('http://localhost:4000/users');
+      setAttendanceData(response.data);
+      console.log(`my name os helga : ${response.data}`);
+    } catch (err) {
+      console.error('Error fetching attendance data:', err);
+    }
+  };
 
   const markAttendance = (studentId, status) => {
-    setData(prevData =>
+    setAttendanceData(prevData =>
       prevData.map(student =>
         student.id === studentId ? { ...student, status } : student
       )
@@ -24,8 +39,9 @@ const Attendance = () => {
             <th>Action</th>
           </tr>
         </thead>
-        <tbody>
-          {data.map(student => (
+        {attendanceData && (
+          <tbody>
+          {attendanceData.map(student => (
             <tr key={student.id}>
               <td>{student.name}</td>
               <td>{student.status}</td>
@@ -36,6 +52,7 @@ const Attendance = () => {
             </tr>
           ))}
         </tbody>
+        )}
       </table>
     </div>
   );
