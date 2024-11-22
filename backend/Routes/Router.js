@@ -6,6 +6,7 @@ router.get('/users', (req,res) => {
 
     [
         {
+          "id": 1,
           "prenom": "Preeti",
           "nom": "Marshall",
           "courriel": "marypa_27@example.com",
@@ -22,6 +23,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 2,
           "prenom": "Matthew",
           "nom": "Maisonneuve",
           "courriel": "matt.rozak@example.com",
@@ -38,6 +40,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 3,
           "prenom": "Anik",
           "nom": "St-Denis",
           "courriel": "anikkahrer@example.com",
@@ -54,6 +57,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 4,
           "prenom": "Andree",
           "nom": "Ignacz",
           "courriel": "andree.seguin27@example.com",
@@ -70,6 +74,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 5,
           "prenom": "Gaby",
           "nom": "Richard",
           "courriel": "gabycjovic@example.com",
@@ -86,6 +91,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": "Maxwell a un EpiPen pour le sesame. Si c?est possible, il aimerait etre dans la meme groupe que son amie Oscar (Rozak).  Merci, Gaby"
         },
         {
+          "id": 6,
           "prenom": "Annie",
           "nom": "Bouvier",
           "courriel": "famillepickering@example.com",
@@ -102,6 +108,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 7,
           "prenom": "Elizabeth",
           "nom": "Tetreault",
           "courriel": "ferniegirl@example.com",
@@ -118,6 +125,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 8,
           "prenom": "Annie",
           "nom": "corley",
           "courriel": "anniecarroll14@example.com",
@@ -134,6 +142,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 9,
           "prenom": "Catherine",
           "nom": "Jundi",
           "courriel": "cf.thibodeau@example.com",
@@ -150,6 +159,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 10,
           "prenom": "Julie",
           "nom": "Tabbasum",
           "courriel": "juaude@example.com",
@@ -166,6 +176,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 11,
           "prenom": "Sophie-Catherine",
           "nom": "Groulx",
           "courriel": "sc.menard@example.com",
@@ -182,6 +193,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 12,
           "prenom": "Stephanie",
           "nom": "Bazinet",
           "courriel": "stephanie-laplante@example.com",
@@ -198,6 +210,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 13,
           "prenom": "Andreanne",
           "nom": "Burk",
           "courriel": "andreanne_com@example.com",
@@ -214,6 +227,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 14,
           "prenom": "Marianne",
           "nom": "Rozon",
           "courriel": "rachel_4nier@example.com",
@@ -230,6 +244,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 15,
           "prenom": "Rachel",
           "nom": "Habib",
           "courriel": "rachel_4nier@example.com",
@@ -246,6 +261,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": "Laken a la fibrose kystique et doit prendre des enzymes digestive avec les repas et collations."
         },
         {
+          "id": 16,
           "prenom": "Christina",
           "nom": "Vaziri",
           "courriel": "ctinasantos@example.com",
@@ -262,6 +278,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 17,
           "prenom": "Natasha",
           "nom": "Laidlaw",
           "courriel": "natashasauve11@example.com",
@@ -278,6 +295,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 18,
           "prenom": "Michelle",
           "nom": "Lyons",
           "courriel": "michelle.raffel@example.com",
@@ -294,6 +312,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 19,
           "prenom": "Mylene",
           "nom": "Theoret",
           "courriel": "myl_03@example.com",
@@ -310,6 +329,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 20,
           "prenom": "Nathalie",
           "nom": "Sylvestre",
           "courriel": "rachel_4nier@example.com",
@@ -326,6 +346,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 21,
           "prenom": "Stephanie",
           "nom": "Lemieux",
           "courriel": "stephanie.jasmin@example.com",
@@ -342,6 +363,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": "Dans le meme groupe que son ami Elias Castilla svp."
         },
         {
+          "id": 22,
           "prenom": "marie-claire",
           "nom": "Roy",
           "courriel": "marieclaire.castilla@example.com",
@@ -358,6 +380,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": "Dans le groupe de Michael s.v.p"
         },
         {
+          "id": 23,
           "prenom": "Jacynthe",
           "nom": "Gaudreau",
           "courriel": "jcarrierelalonde@example.com",
@@ -374,6 +397,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 24,
           "prenom": "Julie",
           "nom": "BELANGER",
           "courriel": "julie.donais@example.com",
@@ -390,6 +414,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 25,
           "prenom": "Jean-Pierre",
           "nom": "Taillefer",
           "courriel": "jp.saab.02@example.com",
@@ -406,6 +431,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": "Serait-ce possible de la mettre dans le meme groupe que Hazel Crofton svp? Merci"
         },
         {
+          "id": 26,
           "prenom": "Elizabeeth",
           "nom": "Murebwayire",
           "courriel": "ferniegirl@example.com",
@@ -422,6 +448,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": "allergique au lait, ble, noix, arachide"
         },
         {
+          "id": 27,
           "prenom": "Isabelle",
           "nom": "Marava",
           "courriel": "imcca050@example.com",
@@ -438,6 +465,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 28,
           "prenom": "Claire",
           "nom": "Castilla",
           "courriel": "claire.tugault@example.com",
@@ -454,6 +482,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 29,
           "prenom": "Melanie",
           "nom": "Kanyenyeri",
           "courriel": "melboulerice@example.com",
@@ -470,6 +499,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 30,
           "prenom": "Joelle",
           "nom": "Avignon",
           "courriel": "joelle.levac@example.com",
@@ -486,6 +516,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 31,
           "prenom": "Malorie",
           "nom": "Lafortune",
           "courriel": "malorie.bertrand@example.com",
@@ -502,6 +533,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 32,
           "prenom": "Jodie",
           "nom": "Mes",
           "courriel": "JODIEMCGILCHRIST@example.COM",
@@ -518,6 +550,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 33,
           "prenom": "Erika",
           "nom": "Leger",
           "courriel": "ebelloni11292@example.com",
@@ -534,6 +567,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": "He is from English house but is in French School- Des Pionniers. His comprehension is good but sometimes needs clarification in English"
         },
         {
+          "id": 34,
           "prenom": "Karine",
           "nom": "Mansouri",
           "courriel": "karvetvut@example.com",
@@ -550,6 +584,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 35,
           "prenom": "Marie-Pier",
           "nom": "Diarra",
           "courriel": "mariepier_bernard@example.com",
@@ -566,6 +601,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 36,
           "prenom": "Frencheska",
           "nom": "Rwigamba",
           "courriel": "xfrenx@example.com",
@@ -582,6 +618,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 37,
           "prenom": "Isabelle",
           "nom": "Cornel",
           "courriel": "i.lalonde@example.com",
@@ -598,6 +635,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 38,
           "prenom": "Julie",
           "nom": "Blazeski",
           "courriel": "Julielangevin10@example.com",
@@ -614,6 +652,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 39,
           "prenom": "Sarah",
           "nom": "Ntumba",
           "courriel": "cogansarah@example.com",
@@ -630,6 +669,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 40,
           "prenom": "Amelie",
           "nom": "Charlebois",
           "courriel": "amelie.maisonneuve@example.com",
@@ -646,6 +686,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 41,
           "prenom": "Chloe",
           "nom": "Pacheco",
           "courriel": "chloe.st-denis@example.ca",
@@ -662,6 +703,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 42,
           "prenom": "Stephanie",
           "nom": "Daley",
           "courriel": "Julielangevin10@example.com",
@@ -678,6 +720,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 43,
           "prenom": "Angie",
           "nom": "Shouldice",
           "courriel": "pelletierangie@example.com",
@@ -694,6 +737,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 44,
           "prenom": "Elodie",
           "nom": "AHOUANGANNON",
           "courriel": "elodiebouvier12@example.com",
@@ -710,6 +754,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 45,
           "prenom": "Stephanie",
           "nom": "Gauthier",
           "courriel": "steff.tetreault@example.com",
@@ -726,6 +771,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 46,
           "prenom": "KIM",
           "nom": "Gravel",
           "courriel": "kimzap87@example.com",
@@ -742,6 +788,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 47,
           "prenom": "Veronique",
           "nom": "Boulerice",
           "courriel": "edouardmarava@example.com",
@@ -758,6 +805,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 48,
           "prenom": "Salamat",
           "nom": "Cherilus",
           "courriel": "salamattabbasum@example.com",
@@ -774,6 +822,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": "Pas de porc Nouriture halal"
         },
         {
+          "id": 49,
           "prenom": "Ashlyn",
           "nom": "April",
           "courriel": "ashlyngroulx@example.com",
@@ -790,6 +839,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 50,
           "prenom": "Nathalie",
           "nom": "Loh",
           "courriel": "liamlukasboseph@example.com",
@@ -806,6 +856,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": "Autisme tres leger.  Jumeau de Lukas Joseph"
         },
         {
+          "id": 51,
           "prenom": "Stephanie",
           "nom": "Chartrand",
           "courriel": "slburk4@example.com",
@@ -822,6 +873,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": "Allergie aux noix"
         },
         {
+          "id": 52,
           "prenom": "Natalie",
           "nom": "Charles Alexis",
           "courriel": "natalierozon@example.com",
@@ -838,6 +890,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 53,
           "prenom": "Azaid",
           "nom": "Andrews",
           "courriel": "ahabib83@example.com",
@@ -854,6 +907,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 54,
           "prenom": "Fariba",
           "nom": "Rozak",
           "courriel": "fariba.vaziri@example.com",
@@ -870,6 +924,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 55,
           "prenom": "Jenna",
           "nom": "Kahrer",
           "courriel": "jwoermke@example.com",
@@ -886,6 +941,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 56,
           "prenom": "Madeleine",
           "nom": "Seguin",
           "courriel": "edouardmarava@example.com",
@@ -902,6 +958,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 57,
           "prenom": "Caroline",
           "nom": "Jovic",
           "courriel": "edouardmarava@example.com",
@@ -918,6 +975,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 58,
           "prenom": "Henry",
           "nom": "Bourbonnais",
           "courriel": "sylvestrehenry8@example.com",
@@ -934,6 +992,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 59,
           "prenom": "Caroline",
           "nom": "Mason",
           "courriel": "lemieux1972@example.com",
@@ -950,6 +1009,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 60,
           "prenom": "Andree-Anne",
           "nom": "Carroll",
           "courriel": "andreeanneroy@example.ca",
@@ -966,6 +1026,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 61,
           "prenom": "Manon",
           "nom": "Bertrand",
           "courriel": "manon.gaudreau@example.com",
@@ -982,6 +1043,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": "Demande speciale svp : Semaine du 24 juin avec Oli Gauthier Semaine du 29 juillet avec Theodore Theriault"
         },
         {
+          "id": 62,
           "prenom": "STEPHANIE",
           "nom": "Audet",
           "courriel": "mnscharlebois@example.com",
@@ -998,6 +1060,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 63,
           "prenom": "Valerie",
           "nom": "Menard",
           "courriel": "val.taillefer@example.com",
@@ -1014,6 +1077,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 64,
           "prenom": "Nadine",
           "nom": "LaPlante",
           "courriel": "nadine.murebwayire@example.com",
@@ -1030,6 +1094,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 65,
           "prenom": "Edouard",
           "nom": "Camire-Tremblay",
           "courriel": "edouardmarava@example.com",
@@ -1046,6 +1111,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": "regulation emotionnelle parfois"
         },
         {
+          "id": 66,
           "prenom": "Marie-Claire",
           "nom": "Nesbitt",
           "courriel": "marieclaire.castilla@example.com",
@@ -1062,6 +1128,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 67,
           "prenom": "Melanie",
           "nom": "Fournier",
           "courriel": "edouardmarava@example.com",
@@ -1078,6 +1145,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 68,
           "prenom": "Iryna",
           "nom": "Santos",
           "courriel": "iavignon@example.fr",
@@ -1094,6 +1162,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 69,
           "prenom": "Cynthia",
           "nom": "Sauve",
           "courriel": "cynthia.lafortune@example.com",
@@ -1110,6 +1179,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 70,
           "prenom": "Becky",
           "nom": "Raffel",
           "courriel": "becky.mes@example.com",
@@ -1126,6 +1196,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 71,
           "prenom": "Louise",
           "nom": "Hebert",
           "courriel": "Louisevleger@example.com",
@@ -1142,6 +1213,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 72,
           "prenom": "Hajar",
           "nom": "Lalonde",
           "courriel": "h.mansouri@ensem.ac.ma",
@@ -1158,6 +1230,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 73,
           "prenom": "Jessica",
           "nom": "Jasmin",
           "courriel": "keffi.jessica@example.com",
@@ -1174,6 +1247,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 74,
           "prenom": "Kayitesi Laura",
           "nom": "castilla",
           "courriel": "kaurla06@example.com",
@@ -1190,6 +1264,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 75,
           "prenom": "Stephanie",
           "nom": "Carriere Lalonde",
           "courriel": "stephanie.l8226@example.com",
@@ -1206,6 +1281,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 76,
           "prenom": "Sofi",
           "nom": "Donais",
           "courriel": "Blazeski_sofi@example.com",
@@ -1222,6 +1298,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": "Asthma"
         },
         {
+          "id": 77,
           "prenom": "Marthe",
           "nom": "Saab",
           "courriel": "ntumbamarthe000@example.com",
@@ -1238,6 +1315,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": "ils ont recu une place de la part du CECCE."
         },
         {
+          "id": 78,
           "prenom": "Laure",
           "nom": "Mason",
           "courriel": "Chalau05@example.com",
@@ -1254,6 +1332,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 79,
           "prenom": "Trisha",
           "nom": "McCauley",
           "courriel": "trishapacheco90@example.com",
@@ -1270,6 +1349,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 80,
           "prenom": "Rachelle",
           "nom": "Tugault-Lafleur",
           "courriel": "rachelle.daley@example.com",
@@ -1286,6 +1366,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 81,
           "prenom": "Kate",
           "nom": "Boulerice",
           "courriel": "kate_shouldice@example.com",
@@ -1302,6 +1383,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": "TDAH, a besoin des medicaments en liquide dans l'apres midi"
         },
         {
+          "id": 82,
           "prenom": "SIDONIE",
           "nom": "Levac-Laplante",
           "courriel": "kin_toucoul@example.com",
@@ -1318,6 +1400,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 83,
           "prenom": "Julie",
           "nom": "Bertrand",
           "courriel": "julie8bb@example.com",
@@ -1334,6 +1417,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 84,
           "prenom": "Melanie",
           "nom": "Boyer",
           "courriel": "graveme@example.ca",
@@ -1350,6 +1434,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 85,
           "prenom": "Melanie et Jean-Marc",
           "nom": "Hendriks",
           "courriel": "melboulerice@example.com",
@@ -1366,6 +1451,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 86,
           "prenom": "Bobyca",
           "nom": "Vetvutanapibul",
           "courriel": "cherboby94@example.com",
@@ -1382,6 +1468,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 87,
           "prenom": "Rhonda",
           "nom": "Bernard",
           "courriel": "rhonda.april@example.com",
@@ -1398,6 +1485,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 88,
           "prenom": "Natalie",
           "nom": "Bergeron",
           "courriel": "natliz_loh@example.com",
@@ -1414,6 +1502,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 89,
           "prenom": "Maryse",
           "nom": "Lalonde Hendriks",
           "courriel": "marysechart1@example.com",
@@ -1430,6 +1519,7 @@ router.get('/users', (req,res) => {
           "besoinsSpeciaux": ""
         },
         {
+          "id": 90,
           "prenom": "Jocelene",
           "nom": "Langevin",
           "courriel": "joalexis@myyahoo.com",
