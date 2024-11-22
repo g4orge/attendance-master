@@ -1,5 +1,4 @@
 // src/App.js
-import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
 import Layout from './Components/Layout';
 import HomePage from './Pages/HomePage';
@@ -9,28 +8,19 @@ import CreateEvent from './Components/CreateEvent';
 import Attendance from './Pages/Attendance';
 
 
-function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-  };
-
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-  };
-
+ function App() {
   return (
     <Router>
       <Routes>
-
-        {/* Protected routes with Layout (Navbar) */}
-        <Route path= "/" element={<Layout/>} />
+        {/* Layout will always render as a wrapper for child routes */}
+        <Route path="/" element={<Layout />}>
+          {/* Nested routes */}
           <Route index element={<HomePage />} />
           <Route path="calendar" element={<MainCalendar />} />
           <Route path="create-event" element={<CreateEvent />} />
           <Route path="admin" element={<Admin />} />
           <Route path="attendance" element={<Attendance />} />
+        </Route>
       </Routes>
     </Router>
   );

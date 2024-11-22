@@ -89,14 +89,6 @@ const Admin = () => {
     }
   };
 
-  // Restore deleted event
-  const handleRestoreEvent = (event) => {
-    createEvent(event).then((restoredEvent) => {
-      setEvents([...events, restoredEvent]);
-      setDeletedEvents(deletedEvents.filter(deleted => deleted.id !== event.id));
-      alert('Event restored successfully!');
-    });
-  };
 
   // Select event for editing or deletion
   const handleSelectEvent = (event) => {
@@ -180,7 +172,6 @@ const Admin = () => {
               <h3>Edit Event</h3>
               <input type="text" name="FirstName" placeholder="First Name" value={eventDetails.FirstName} onChange={handleEventChange} />
               <input type="text" name="LastName" placeholder="Last Name" value={eventDetails.LastName} onChange={handleEventChange} />
-              <input type="text" name="summary" placeholder="Event Summary" value={eventDetails.summary} onChange={handleEventChange} />
               <select name="location" value={eventDetails.location} onChange={handleEventChange}>
                 {locations.slice(1).map(location => (
                   <option key={location} value={location}>{location}</option>
