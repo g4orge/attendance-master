@@ -70,6 +70,7 @@ const MainCalendar = () => {
                     <p>Location: {event.location}</p>
                     <p>Start: {new Date(event.start.dateTime).toLocaleTimeString()}</p>
                     <p>End: {new Date(event.end.dateTime).toLocaleTimeString()}</p>
+                    <p><button onClick={() => navigate('/attendance')}>Attendance Sheet</button></p>
                   </div>
                 ))
               ) : (

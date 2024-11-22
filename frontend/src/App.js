@@ -6,6 +6,7 @@ import HomePage from './Pages/HomePage';
 import MainCalendar from './Pages/MainCalendar';
 import Admin from './Pages/Admin';
 import CreateEvent from './Components/CreateEvent';
+import Attendance from './Pages/Attendance';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="calendar" element={<MainCalendar />} />
           <Route path="create-event" element={<CreateEvent />} />
           <Route path="admin" element={<Admin />} />
+          <Route path="attendance" element={<Attendance />} />
       </Routes>
     </Router>
   );
