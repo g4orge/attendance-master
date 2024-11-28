@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { gapi } from 'gapi-script';
 
 const CLIENT_ID = '231611256375-ccl0ua5knonls2t7rpmiafvj0j83ttsv.apps.googleusercontent.com';
@@ -13,6 +14,8 @@ const useApiCall = () => {
   const [events, setEvents] = useState([]);
   const [user, setUser] = useState(null);
   const adminEmail = '';
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const initClient = () => {
@@ -71,6 +74,7 @@ const useApiCall = () => {
       setIsSignedIn(false);
       setUser(null);
       setEvents([]);
+      navigate('/');
     }).catch(err => {
       setError('Sign-out failed.');
       console.error('Error during sign-out', err);
