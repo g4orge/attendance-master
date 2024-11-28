@@ -6,6 +6,8 @@ import MainCalendar from './Pages/MainCalendar';
 import Admin from './Pages/Admin';
 import CreateEvent from './Components/CreateEvent';
 import Attendance from './Pages/Attendance';
+import Login from './Pages/Login';
+
 //import useApiCall from './Components/ApiCall';
 
 
@@ -17,6 +19,7 @@ import Attendance from './Pages/Attendance';
         <Route path="/" element={<Layout />}>
           {/* Nested routes */}
           <Route index element={<HomePage />} />
+          <Route path="Login" element={<Login />} />
           <Route path="calendar" element={<MainCalendar />} />
           <Route path="create-event" element={<CreateEvent />} />
           <Route path="admin" element={<Admin />} />
