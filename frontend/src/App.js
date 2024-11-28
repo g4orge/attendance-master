@@ -6,7 +6,7 @@ import MainCalendar from './Pages/MainCalendar';
 import Admin from './Pages/Admin';
 import CreateEvent from './Components/CreateEvent';
 import Attendance from './Pages/Attendance';
-import useApiCall from './Components/ApiCall';
+//import useApiCall from './Components/ApiCall';
 
 
  function App() {

@@ -1,13 +1,21 @@
 // src/Components/Navbar.js
 import React from 'react';
 import { Link } from 'react-router-dom';
+import dandelion from '../Assets/dandelion.png';
+import useApiCall from '../Components/ApiCall';
 import './Navbar.css';
 
-const Navbar = ({ onLogout }) => {
+const Navbar = () => {
+  const {
+    isSignedIn,
+    handleAuthClick,
+    handleSignOutClick,
+  } = useApiCall();
+
   return (
     <div className="navbar">
       <div className="navbar-left">
-        <button className="hamburger-menu">☰</button>
+        <img src={dandelion} alt="App Logo" className="app-logo" />
         <Link to="/" className="app-name">Home</Link>
       </div>
       <div className="navbar-center">
@@ -15,7 +23,11 @@ const Navbar = ({ onLogout }) => {
         <Link to="/admin" className="nav-link">Admin</Link>
       </div>
       <div className="navbar-right">
-        <button onClick={onLogout} className="logout-button">Logout</button>
+      {!isSignedIn ? (
+        <button onClick={handleAuthClick}>Sign in</button>
+      ) : (
+        <button onClick={handleSignOutClick} className="logout-button">Logout</button>
+      )}
       </div>
     </div>
   );

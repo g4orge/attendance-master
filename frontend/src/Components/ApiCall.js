@@ -8,6 +8,7 @@ const DISCOVERY_DOCS = ['https://www.googleapis.com/discovery/v1/apis/calendar/v
 
 const useApiCall = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [events, setEvents] = useState([]);
   const [user, setUser] = useState(null);
@@ -25,6 +26,7 @@ const useApiCall = () => {
         if (authInstance) {
           authInstance.isSignedIn.listen(setIsSignedIn);
           setIsSignedIn(authInstance.isSignedIn.get());
+          setLoading(false);
 
           if (authInstance.isSignedIn.get()) {
             const userProfile = authInstance.currentUser.get().getBasicProfile();
@@ -36,10 +38,12 @@ const useApiCall = () => {
           }
         } else {
           setError('Failed to initialize Google API client.');
+          setLoading(false);
         }
       }).catch(err => {
         setError('Error initializing Google API client');
         console.error(err);
+        setLoading(false);
       });
     };
 
@@ -151,6 +155,7 @@ const useApiCall = () => {
 
   return {
     isSignedIn,
+    loading,
     error,
     events,
     user,
