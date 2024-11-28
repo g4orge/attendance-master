@@ -2,24 +2,25 @@ import React, { useState, useEffect } from 'react';
 import { deleteEvent, createEvent, listEvents, updateEvent } from '../Components/CalendarService';
 import useApiCall from '../Components/ApiCall';
 import './Admin.css';
+import CreateEvent from '../Components/CreateEvent';
 
 const Admin = () => {
   const { isSignedIn, error, handleAuthClick, handleSignOutClick, events, setEvents } = useApiCall();
-  const [filteredLocation, setFilteredLocation] = useState('All');
+  const [filteredLocation, setFilteredLocation] = useState('');
   const [hoveredEvent, setHoveredEvent] = useState(null);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [isCreating, setIsCreating] = useState(false);
+  const [formError, setFormError] = useState('');
   const [deletedEvents, setDeletedEvents] = useState([]);
   const [confirmText, setConfirmText] = useState('');
   const [eventDetails, setEventDetails] = useState({
     summary: '',
-    location: 'Rideau',
+    location: '',
     description: '',
     start: '',
     end: '',
-    FirstName: '',
-    LastName: '',
+    counsellorName: '',
   });
 
   const locations = ['All', 'Rideau', 'Varnier', 'uOttawa', 'Summerset', 'Gatineau'];
@@ -41,16 +42,20 @@ const Admin = () => {
   // Submit new event details
   const handleCreateSubmit = async (e) => {
     e.preventDefault();
+    if (eventDetails.location === '') {
+      setFormError('Please select a location.');
+      return;
+    }
     const newEvent = {
       ...eventDetails,
-      summary: `${eventDetails.FirstName} ${eventDetails.LastName}`,
+      summary: `${eventDetails.counsellorName}`,
       start: { dateTime: new Date(eventDetails.start).toISOString(), timeZone: 'America/New_York' },
       end: { dateTime: new Date(eventDetails.end).toISOString(), timeZone: 'America/New_York' },
     };
     const createdEvent = await createEvent(newEvent);
     if (createdEvent) {
       setEvents([...events, createdEvent]);
-      setEventDetails({ summary: '', location: 'Rideau', description: '', start: '', end: '', FirstName: '', LastName: '' });
+      setEventDetails({ summary: '', location: '', description: '', start: '', end: '', counsellorName: '' });
       setIsCreating(false);
       alert('Event created successfully!');
     }
@@ -59,6 +64,10 @@ const Admin = () => {
   // Submit edited event details
   const handleEditSubmit = async (e) => {
     e.preventDefault();
+    if (eventDetails.location === '') {
+      setFormError('Please select a location.');
+      return;
+    }
     const updatedEventData = {
       ...selectedEvent,
       ...eventDetails,
@@ -99,8 +108,7 @@ const Admin = () => {
       description: event.description,
       start: event.start.dateTime,
       end: event.end.dateTime,
-      FirstName: event.FirstName || '',
-      LastName: event.LastName || '',
+      counsellorName: event.counsellorName || '',
     });
   };
 
@@ -118,6 +126,7 @@ const Admin = () => {
           <div className="filter-section">
             <label>Filter by Location: </label>
             <select value={filteredLocation} onChange={(e) => setFilteredLocation(e.target.value)}>
+              <option disabled value="">Select location</option>
               {locations.map(location => (
                 <option key={location} value={location}>{location}</option>
               ))}
@@ -170,8 +179,7 @@ const Admin = () => {
           {isEditing && (
             <form onSubmit={handleEditSubmit} className="edit-form">
               <h3>Edit Event</h3>
-              <input type="text" name="FirstName" placeholder="First Name" value={eventDetails.FirstName} onChange={handleEventChange} />
-              <input type="text" name="LastName" placeholder="Last Name" value={eventDetails.LastName} onChange={handleEventChange} />
+              <input type="text" name="counsellorName" placeholder="First Name" value={eventDetails.counsellorName} onChange={handleEventChange} />
               <select name="location" value={eventDetails.location} onChange={handleEventChange}>
                 {locations.slice(1).map(location => (
                   <option key={location} value={location}>{location}</option>
@@ -186,21 +194,7 @@ const Admin = () => {
 
           {/* Create Event Form */}
           {isCreating && (
-            <form onSubmit={handleCreateSubmit} className="create-form">
-              <h3>Create New Event</h3>
-              <input type="text" name="FirstName" placeholder="First Name" value={eventDetails.FirstName} onChange={handleEventChange} required />
-              <input type="text" name="LastName" placeholder="Last Name" value={eventDetails.LastName} onChange={handleEventChange} required />
-              <input type="text" name="summary" placeholder="Event Summary" value={eventDetails.summary} onChange={handleEventChange} required />
-              <select name="location" value={eventDetails.location} onChange={handleEventChange} required>
-                {locations.slice(1).map(location => (
-                  <option key={location} value={location}>{location}</option>
-                ))}
-              </select>
-              <textarea name="description" placeholder="Description" value={eventDetails.description} onChange={handleEventChange} />
-              <input type="datetime-local" name="start" value={eventDetails.start} onChange={handleEventChange} required />
-              <input type="datetime-local" name="end" value={eventDetails.end} onChange={handleEventChange} required />
-              <button type="submit">Create Event</button>
-            </form>
+            <CreateEvent />
           )}
         </>
       )}

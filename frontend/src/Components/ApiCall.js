@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { gapi } from 'gapi-script';
 
 const CLIENT_ID = '231611256375-ccl0ua5knonls2t7rpmiafvj0j83ttsv.apps.googleusercontent.com';
@@ -8,10 +9,13 @@ const DISCOVERY_DOCS = ['https://www.googleapis.com/discovery/v1/apis/calendar/v
 
 const useApiCall = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [events, setEvents] = useState([]);
   const [user, setUser] = useState(null);
   const adminEmail = '';
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const initClient = () => {
@@ -25,6 +29,7 @@ const useApiCall = () => {
         if (authInstance) {
           authInstance.isSignedIn.listen(setIsSignedIn);
           setIsSignedIn(authInstance.isSignedIn.get());
+          setLoading(false);
 
           if (authInstance.isSignedIn.get()) {
             const userProfile = authInstance.currentUser.get().getBasicProfile();
@@ -36,10 +41,12 @@ const useApiCall = () => {
           }
         } else {
           setError('Failed to initialize Google API client.');
+          setLoading(false);
         }
       }).catch(err => {
         setError('Error initializing Google API client');
         console.error(err);
+        setLoading(false);
       });
     };
 
@@ -67,6 +74,7 @@ const useApiCall = () => {
       setIsSignedIn(false);
       setUser(null);
       setEvents([]);
+      navigate('/');
     }).catch(err => {
       setError('Sign-out failed.');
       console.error('Error during sign-out', err);
@@ -151,6 +159,7 @@ const useApiCall = () => {
 
   return {
     isSignedIn,
+    loading,
     error,
     events,
     user,

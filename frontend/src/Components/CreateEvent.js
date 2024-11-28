@@ -2,27 +2,28 @@ import React, { useState } from 'react';
 import { createEvent } from './CalendarService';
 import { useNavigate } from 'react-router-dom';
 import useApiCall from './ApiCall';
+import './CreateEvent.css';
 
 const CreateEvent = () => {
   const navigate = useNavigate();
   const { user } = useApiCall();
   const [eventDetails, setEventDetails] = useState({
     summary: '',
-    location: 'Rideau', // Default location
+    location: '', // Default location
     description: '',
     start: '',
     end: '',
-    FirstName: '',
-    LastName: '',
-    hasAllergies: false,
-    allergyDetails: '',
-    allergySolution: '',
-    emergencyContact: {
-      name: '',
-      email: '',
-      phone: '',
-      address: '',
-    },
+    counsellorName: '',
+    comment: '',
+    // hasAllergies: false,
+    // allergyDetails: '',
+    // allergySolution: '',
+    // emergencyContact: {
+    //   name: '',
+    //   email: '',
+    //   phone: '',
+    //   address: '',
+    // },
   });
 
   const handleEventChange = (e) => {
@@ -30,11 +31,19 @@ const CreateEvent = () => {
     setEventDetails({ ...eventDetails, [name]: value });
   };
 
-  const handleEmergencyContactChange = (e) => {
+  // const handleEmergencyContactChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setEventDetails((prevDetails) => ({
+  //     ...prevDetails,
+  //     emergencyContact: { ...prevDetails.emergencyContact, [name]: value },
+  //   }));
+  // };
+
+  const handleCommentChange = (e) => {
     const { name, value } = e.target;
     setEventDetails((prevDetails) => ({
       ...prevDetails,
-      emergencyContact: { ...prevDetails.emergencyContact, [name]: value },
+      comment: { ...prevDetails.comment, [name]: value },
     }));
   };
 
@@ -42,13 +51,13 @@ const CreateEvent = () => {
     e.preventDefault();
 
     // Validate required fields
-    if (!eventDetails.start || !eventDetails.end || !eventDetails.FirstName || !eventDetails.LastName) {
+    if (!eventDetails.start || !eventDetails.end || !eventDetails.counsellorName) {
       alert('Please fill in all required fields.');
       return;
     }
 
     const eventData = {
-      summary: `${eventDetails.FirstName} ${eventDetails.LastName}`,
+      summary: `${eventDetails.counsellorName}`,
       location: eventDetails.location,
       description: eventDetails.description,
       start: { dateTime: new Date(eventDetails.start).toISOString(), timeZone: 'America/New_York' },
@@ -60,7 +69,7 @@ const CreateEvent = () => {
       creator: {
         id: user.id,
         email: user.email,
-        displayName: `${eventDetails.FirstName} ${eventDetails.LastName}`,
+        displayName: `${eventDetails.counsellorName}`,
       },
     };
 
@@ -72,12 +81,11 @@ const CreateEvent = () => {
         alert('Event created successfully!');
         setEventDetails({
           summary: '',
-          location: 'Rideau',
+          location: '',
           description: '',
           start: '',
           end: '',
-          FirstName: '',
-          LastName: '',
+          counsellorName: '',
           hasAllergies: false,
           allergyDetails: '',
           allergySolution: '',
@@ -105,24 +113,12 @@ const CreateEvent = () => {
         <table className="excel-style-form">
           <tbody>
             <tr>
-              <td>First Name</td>
+              <td>Counsellor</td>
               <td>
                 <input
                   type="text"
-                  name="FirstName"
-                  value={eventDetails.FirstName}
-                  onChange={handleEventChange}
-                  required
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>Last Name</td>
-              <td>
-                <input
-                  type="text"
-                  name="LastName"
-                  value={eventDetails.LastName}
+                  name="counsellorName"
+                  value={eventDetails.counsellorName}
                   onChange={handleEventChange}
                   required
                 />
@@ -137,6 +133,7 @@ const CreateEvent = () => {
                   onChange={handleEventChange}
                   required
                 >
+                  <option disabled value="">Select location</option>
                   <option value="Rideau">Rideau</option>
                   <option value="Varnier">Varnier</option>
                   <option value="uOttawa">uOttawa</option>
@@ -180,6 +177,17 @@ const CreateEvent = () => {
               </td>
             </tr>
             <tr>
+              <td>Comments</td>
+              <td>
+                <input
+                  type="text"
+                  name="name"
+                  value={eventDetails.comment.name}
+                  onChange={handleCommentChange}
+                />
+                </td>
+            </tr>
+            {/* <tr>
               <td>Do you have any allergies?</td>
               <td>
                 <button
@@ -245,8 +253,8 @@ const CreateEvent = () => {
                   </td>
                 </tr>
               </>
-            )}
-            <tr>
+            )} */}
+            {/* <tr>
               <td>Emergency Contact Name</td>
               <td>
                 <input
@@ -292,7 +300,7 @@ const CreateEvent = () => {
                   required
                 />
               </td>
-            </tr>
+            </tr> */}
           </tbody>
         </table>
 

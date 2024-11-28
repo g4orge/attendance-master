@@ -1,0 +1,25 @@
+/* CreateEvent.css */
+
+.form-actions {
+  display: flex;
+  gap: 1rem; /* Use rem for responsive spacing */
+}
+
+.form-actions button {
+  padding: 0.8rem 1rem; /* Use rem for responsive padding */
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.form-actions button[type="submit"] {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border: none;
+}
+
+.form-actions button[type="button"] {
+  background-color: #949494; /* Red */
+  color: white;
+  border: none;
+}
+

@@ -10,6 +10,7 @@ import './MainCalendar.css';
 const MainCalendar = () => {
   const {
     isSignedIn,
+    loading,
     error,
     handleAuthClick,
     handleSignOutClick,
@@ -26,7 +27,10 @@ const MainCalendar = () => {
     if (isSignedIn) {
       listEvents().then(fetchedEvents => setEvents(fetchedEvents));
     }
-  }, [isSignedIn, setEvents]);
+    else if (!isSignedIn && !loading) {
+      handleAuthClick();
+    }
+  }, [isSignedIn, loading, setEvents]);
 
   // Filter events based on the selected date
   useEffect(() => {
@@ -46,11 +50,14 @@ const MainCalendar = () => {
     <div className="container">
       {error && <p style={{ color: 'red' }}>{error}</p>}
 
-      {!isSignedIn ? (
-        <button onClick={handleAuthClick}>Sign in with Google</button>
+      {loading ? (
+        <p>Loading...</p>
       ) : (
         <>
-          <button onClick={handleSignOutClick}>Sign out</button>
+        {!isSignedIn ? (
+        <p>You are not signed</p>
+      ) : (
+        <>
 
           {/* Calendar for selecting dates */}
           <div className="calendar-container">
@@ -88,6 +95,8 @@ const MainCalendar = () => {
           </div>
         </>
       )}
+      </>
+    )}
     </div>
   );
 };

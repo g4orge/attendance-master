@@ -6,8 +6,8 @@ import './HomePage.css';
 const HomePage = () => {
   return (
     <div className="homepage-container">
-      <h1>Welcome to Modify App</h1>
-      <p>Your tool for managing and tracking events seamlessly with Google Calendar integration.</p>
+      <h1>Welcome</h1>
+      <p>Your tool for managing and tracking events and campers with Google Calendar.</p>
 
       <div className="homepage-links">
         <div className="homepage-section">
