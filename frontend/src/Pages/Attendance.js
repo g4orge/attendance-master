@@ -1,6 +1,7 @@
 // src/Components/Attendance.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './Attendance.css'
 //import { attendanceData } from './Router';
 
 const userData = [
@@ -1625,10 +1626,11 @@ const Attendance = () => {
                     <input
                       type="checkbox"
                       className="checkbox"
+                      id={`toggle-${student.id}`}
                       checked={student.status === 'Present'}
                       onChange={() => toggleAttendance(student.id)}
                     />
-                    <label className="label">
+                    <label className="label" htmlFor={`toggle-${student.id}`}>
                       <span className="inner" />
                       <span className="switch" />
                     </label>
@@ -1640,6 +1642,7 @@ const Attendance = () => {
         )}
       </table>
       <div className="attendance-actions">
+        <p>Number of campers: {attendanceData.length}</p>
         <button onClick={() => markAllAttendance('Present')}>Mark All Present</button>
         <button >Submit</button>
       </div>

@@ -1,103 +1,104 @@
 /* Attendance.css */
 
 .container {
-    text-align: center;
-  }
-  
-  .attendance-actions {
-    margin-bottom: 1rem;
-  }
-  
-  .toggle-switch {
-    position: relative;
-    width: 75px;
-    display: inline-block;
-    text-align: left;
-    top: 8px;
-  }
-  
-  .checkbox {
-    display: none;
-  }
-  
-  .label {
-    display: block;
-    overflow: hidden;
-    cursor: pointer;
-    border: 0 solid #bbb;
-    border-radius: 20px;
-    position: relative;
-    background-color: #bbb;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  .inner {
-    display: block;
-    width: 200%;
-    margin-left: -100%;
-    transition: margin 0.3s ease-in 0s;
-  }
-  
-  .inner:before,
-  .inner:after {
-    float: left;
-    width: 50%;
-    height: 36px;
-    padding: 0;
-    line-height: 36px;
-    color: #fff;
-    font-weight: bold;
-    box-sizing: border-box;
-  }
-  
-  .inner:before {
-    content: "Present";
-    padding-left: 10px;
-    background-color: #060;
-    color: #fff;
-  }
-  
-  .inner:after {
-    content: "Absent";
-    padding-right: 10px;
-    background-color: #bbb;
-    color: #fff;
-    text-align: right;
-  }
-  
-  .switch {
-    display: block;
-    width: 24px;
-    margin: 5px;
-    background: #fff;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 40px;
-    border: 0 solid #bbb;
-    border-radius: 20px;
-    transition: all 0.3s ease-in 0s;
-  }
-  
-  .checkbox:checked + .label .inner {
-    margin-left: 0;
-  }
-  
-  .checkbox:checked + .label .switch {
-    right: 0px;
-  }
-  
-  .checkbox:checked + .label {
-    background-color: #4CAF50;
-  }
-  
-  /* Alternating row colors */
-  table tbody tr:nth-child(odd) {
-    background-color: #f9f9f9;
-  }
-  
-  table tbody tr:nth-child(even) {
-    background-color: #ffffff;
-  }
+  text-align: center;
+}
 
-  /* From https://www.geeksforgeeks.org/how-to-create-a-toggle-switch-in-react-as-a-reusable-component/ */
+.attendance-actions {
+  margin-bottom: 1rem;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 100px; /* Adjust the width to accommodate the full words */
+  display: inline-block;
+  text-align: left;
+  top: 8px;
+}
+
+.checkbox {
+  display: none;
+}
+
+.label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 0 solid #bbb;
+  border-radius: 20px;
+  position: relative;
+  background-color: #bbb;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+
+.inner:before,
+.inner:after {
+  float: left;
+  width: 50%;
+  height: 30px; /* Adjust the height */
+  padding: 0;
+  line-height: 30px; /* Adjust the line height */
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px; /* Make the wording smaller */
+  box-sizing: border-box;
+}
+
+.inner:before {
+  content: "Present";
+  padding-left: 10px;
+  background-color: #060;
+  color: #fff;
+}
+
+.inner:after {
+  content: "Absent";
+  padding-right: 10px;
+  background-color: #bbb;
+  color: #fff;
+  text-align: right;
+}
+
+.switch {
+  display: block;
+  width: 24px; /* Adjust the width of the switch handle */
+  margin: 3px; /* Adjust the margin */
+  background: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 60px; /* Adjust the right position to match the new width */
+  border: 0 solid #bbb;
+  border-radius: 20px;
+  transition: all 0.3s ease-in 0s;
+}
+
+.checkbox:checked + .label .inner {
+  margin-left: 0;
+}
+
+.checkbox:checked + .label .switch {
+  right: 0px;
+}
+
+.checkbox:checked + .label {
+  background-color: #4CAF50;
+}
+
+/* Alternating row colors */
+table tbody tr:nth-child(odd) {
+  background-color: #e6e6e6;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+/* From https://www.geeksforgeeks.org/how-to-create-a-toggle-switch-in-react-as-a-reusable-component/ */
