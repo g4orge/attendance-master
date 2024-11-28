@@ -1598,9 +1598,10 @@ const Attendance = () => {
     );
   };
 
-  const markAllAttendance = (status) => {
+  const toggleAllAttendance = () => {
+    const allPresent = attendanceData.every(student => student.status === 'Present');
     setAttendanceData(prevData =>
-      prevData.map(student => ({ ...student, status }))
+      prevData.map(student => ({ ...student, status: allPresent ? 'Absent' : 'Present' }))
     );
   };
 
@@ -1608,6 +1609,11 @@ const Attendance = () => {
     <div>
       <h1>Attendance Sheet</h1>
       <table>
+        <colgroup>
+          <col />
+          <col className="status-col" />
+          <col />
+        </colgroup>
         <thead>
           <tr>
             <th>Name</th>
@@ -1617,12 +1623,12 @@ const Attendance = () => {
         </thead>
         {attendanceData && (
           <tbody>
-          {attendanceData.map(student => (
-            <tr key={student.id}>
-              <td>{student.nom}, {student.prenom}</td>
-              <td>{student.status}</td>
+            {attendanceData.map(student => (
+              <tr key={student.id}>
+                <td>{student.nom}, {student.prenom}</td>
+                <td>{student.status}</td>
                 <td>
-                <div className="toggle-switch">
+                  <div className="toggle-switch">
                     <input
                       type="checkbox"
                       className="checkbox"
@@ -1636,15 +1642,16 @@ const Attendance = () => {
                     </label>
                   </div>
                 </td>
-            </tr>
-          ))}
-        </tbody>
+              </tr>
+            ))}
+          </tbody>
         )}
       </table>
       <div className="attendance-actions">
-        <p>Number of campers: {attendanceData.length}</p>
-        <button onClick={() => markAllAttendance('Present')}>Mark All Present</button>
-        <button >Submit</button>
+        <button onClick={() => toggleAllAttendance()}>
+          {attendanceData.every(student => student.status === 'Present') ? 'Mark All Absent' : 'Mark All Present'}
+        </button>
+        <button>Submit</button>
       </div>
     </div>
   );

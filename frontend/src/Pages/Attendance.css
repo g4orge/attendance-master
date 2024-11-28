@@ -10,7 +10,8 @@
 
 .toggle-switch {
   position: relative;
-  width: 100px; /* Adjust the width to accommodate the full words */
+  width: 100%; /* Use percentage for responsive width */
+  max-width: 120px; /* Set a max-width to accommodate the full words */
   display: inline-block;
   text-align: left;
   top: 8px;
@@ -42,25 +43,25 @@
 .inner:after {
   float: left;
   width: 50%;
-  height: 30px; /* Adjust the height */
+  height: 2em; /* Use em for responsive height */
   padding: 0;
-  line-height: 30px; /* Adjust the line height */
+  line-height: 2em; /* Use em for responsive line height */
   color: #fff;
   font-weight: bold;
-  font-size: 12px; /* Make the wording smaller */
+  font-size: 0.75em; /* Use em for responsive font size */
   box-sizing: border-box;
 }
 
 .inner:before {
   content: "Present";
-  padding-left: 10px;
+  padding-left: 0.5em; /* Use em for responsive padding */
   background-color: #060;
   color: #fff;
 }
 
 .inner:after {
   content: "Absent";
-  padding-right: 10px;
+  padding-right: 0.5em; /* Use em for responsive padding */
   background-color: #bbb;
   color: #fff;
   text-align: right;
@@ -68,13 +69,13 @@
 
 .switch {
   display: block;
-  width: 24px; /* Adjust the width of the switch handle */
-  margin: 3px; /* Adjust the margin */
+  width: 1.5em; /* Use em for responsive width */
+  margin: 0.2em; /* Use em for responsive margin */
   background: #fff;
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 60px; /* Adjust the right position to match the new width */
+  right: 2.5em; /* Use em for responsive right position */
   border: 0 solid #bbb;
   border-radius: 20px;
   transition: all 0.3s ease-in 0s;
@@ -85,7 +86,7 @@
 }
 
 .checkbox:checked + .label .switch {
-  right: 0px;
+  right: 0;
 }
 
 .checkbox:checked + .label {
@@ -101,4 +102,29 @@ table tbody tr:nth-child(even) {
   background-color: #ffffff;
 }
 
-/* From https://www.geeksforgeeks.org/how-to-create-a-toggle-switch-in-react-as-a-reusable-component/ */
+/* Set specific column widths */
+table colgroup col {
+  width: auto;
+}
+
+table colgroup col.status-col {
+  width: 20%; /* Use percentage for responsive width */
+}
+
+/* Flexbox for table cells */
+table td {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .toggle-switch {
+    max-width: 100px; /* Adjust max-width for smaller screens */
+  }
+
+  table colgroup col.status-col {
+    width: 30%; /* Adjust width for smaller screens */
+  }
+}
