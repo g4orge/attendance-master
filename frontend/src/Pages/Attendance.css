@@ -29,7 +29,150 @@
   border-radius: 20px;
   position: relative;
   background-color: #bbb;
+  transition: background-color 0.3s ease-in-out;/* Attendance.css */
+
+.container {
+  text-align: center;
+}
+
+.attendance-actions {
+  margin-bottom: 1rem;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 100%; /* Use percentage for responsive width */
+  max-width: 120px; /* Set a max-width to accommodate the full words */
+  display: inline-block;
+  text-align: left;
+  top: 8px;
+}
+
+.checkbox {
+  opacity: 0; /* Make the checkbox invisible but still clickable */
+  width: 0;
+  height: 0;
+}
+
+.label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 0 solid #bbb;
+  border-radius: 20px;
+  position: relative;
+  background-color: #bbb;
   transition: background-color 0.3s ease-in-out;
+}
+
+.inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+
+.inner:before,
+.inner:after {
+  float: left;
+  width: 50%;
+  height: 2em; /* Use em for responsive height */
+  padding: 0;
+  line-height: 2em; /* Use em for responsive line height */
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.75em; /* Use em for responsive font size */
+  box-sizing: border-box;
+}
+
+.inner:before {
+  content: "Present";
+  padding-left: 0.5em; /* Use em for responsive padding */
+  background-color: #060;
+  color: #fff;
+}
+
+.inner:after {
+  content: "Absent";
+  padding-right: 0.5em; /* Use em for responsive padding */
+  background-color: #bbb;
+  color: #fff;
+  text-align: right;
+}
+
+.switch {
+  display: block;
+  width: 1.5em; /* Use em for responsive width */
+  margin: 0.2em; /* Use em for responsive margin */
+  background: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0; /* Adjust the left position for unchecked state */
+  border: 0 solid #bbb;
+  border-radius: 20px;
+  transition: all 0.3s ease-in 0s;
+}
+
+.checkbox:checked + .label .inner {
+  margin-left: 0;
+}
+
+.checkbox:checked + .label .switch {
+  right: 0;
+  left: auto; /* Ensure the left position is reset when checked */
+}
+
+.checkbox:checked + .label {
+  background-color: #4CAF50;
+}
+
+/* Alternating row colors */
+table tbody tr:nth-child(odd) {
+  background-color: #e6e6e6;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+/* Set specific column widths */
+table {
+  table-layout: fixed; /* Ensure table columns are evenly distributed */
+  width: 100%;
+}
+
+table colgroup col {
+  width: auto;
+}
+
+table colgroup col.status-col {
+  width: 30%; /* Increase the width for the status column */
+}
+
+/* Flexbox for table cells */
+table td {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em; /* Add padding for spacing */
+}
+
+/* Set minimum height for table rows */
+table tbody tr {
+  min-height: 3em; /* Adjust the minimum height as needed */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .toggle-switch {
+    max-width: 100px; /* Adjust max-width for smaller screens */
+  }
+
+  table colgroup col.status-col {
+    width: 40%; /* Adjust width for smaller screens */
+  }
+}
 }
 
 .inner {
