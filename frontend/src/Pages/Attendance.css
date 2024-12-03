@@ -75,7 +75,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 2.5em; /* Use em for responsive right position */
+  right: 5.5em;
   border: 0 solid #bbb;
   border-radius: 20px;
   transition: all 0.3s ease-in 0s;
@@ -102,18 +102,23 @@ table tbody tr:nth-child(even) {
   background-color: #ffffff;
 }
 
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+
 /* Set specific column widths */
 table colgroup col {
   width: auto;
 }
 
 table colgroup col.status-col {
-  width: 20%; /* Use percentage for responsive width */
+  width: 30%; /* Use percentage for responsive width */
 }
 
 /* Flexbox for table cells */
 table td {
-  display: flex;
+  display: table-cell;
   align-items: center;
   justify-content: center;
 }
@@ -125,6 +130,6 @@ table td {
   }
 
   table colgroup col.status-col {
-    width: 30%; /* Adjust width for smaller screens */
+    width: 40%; /* Adjust width for smaller screens */
   }
 }
