@@ -1,5 +1,5 @@
-// src/App.js
-import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './Components/Layout';
 import HomePage from './Pages/HomePage';
 import MainCalendar from './Pages/MainCalendar';
@@ -8,26 +8,46 @@ import CreateEvent from './Components/CreateEvent';
 import Attendance from './Pages/Attendance';
 import Login from './Pages/Login';
 
-//import useApiCall from './Components/ApiCall';
+function App() {
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-
- function App() {
-  return (
-    <Router>
-      <Routes>
-        {/* Layout will always render as a wrapper for child routes */}
-        <Route path="/" element={<Layout />}>
-          {/* Nested routes */}
-          <Route index element={<HomePage />} />
-          <Route path="Login" element={<Login />} />
-          <Route path="calendar" element={<MainCalendar />} />
-          <Route path="create-event" element={<CreateEvent />} />
-          <Route path="admin" element={<Admin />} />
-          <Route path="attendance" element={<Attendance />} />
-        </Route>
-      </Routes>
-    </Router>
-  );
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Layout isAuthenticated={isAuthenticated} />}>
+                    <Route
+                        index
+                        element={
+                            isAuthenticated ? <Navigate to="/home" /> : <Login onLogin={() => setIsAuthenticated(true)} />
+                        }
+                    />
+                    <Route
+                        path="home"
+                        element={isAuthenticated ? <HomePage /> : <Navigate to="/" />}
+                    />
+                    <Route
+                        path="calendar"
+                        element={isAuthenticated ? <MainCalendar /> : <Navigate to="/" />}
+                    />
+                    <Route
+                        path="create-event"
+                        element={isAuthenticated ? <CreateEvent /> : <Navigate to="/" />}
+                    />
+                    <Route
+                        path="admin"
+                        element={isAuthenticated ? <Admin /> : <Navigate to="/" />}
+                    />
+                    <Route
+                        path="attendance"
+                        element={isAuthenticated ? <Attendance /> : <Navigate to="/" />}
+                    />
+                    {/* Add Forgot Password Route */}
+                    <Route
+ />
+                </Route>
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;
